@@ -1,7 +1,20 @@
-{{ partial "head.html" . }}<body><div class="section" id="splash">{{ if .Site.Params.mainMenu }}
-{{ range .Site.Params.mainMenu }}<div id="big-link"> <a href="{{.link}}">{{.text}}</a></div>{{ end }}
-{{ else }}
-{{ range .Site.Sections }}<div id="big-link"> <a href="{{.Permalink}}">{{.Title}}</a></div>{{ end }}
-{{ end }}</div>
+{{ partial "head.html" . }}
+<body id="index">
+  <div class="section" id="splash">
+    <div class="big-links">
+    {{ if .Site.Params.mainMenu }}
+      {{ range .Site.Params.mainMenu }}
+        <div class="big-link"> <a href="{{.link}}">{{.text}}</a></div>
+      {{ end }}
+    {{ else }}
+      {{ range .Site.Sections }}
+        <div id="big-link"> <a href="{{.Permalink}}">{{.Title}}</a></div>
+      {{ end }}
+    {{ end }}
+  </div>
+  <div id="logo">
+    <h1>Sarah</h1>
+    <h1>Robin</h1>
+  </div>
 {{ partial "scripts.html" . }}
 </body>

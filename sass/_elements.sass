@@ -1,21 +1,41 @@
 #splash
     margin: auto 0
     height: 100vh
-    width: 45%
-    overflow: hidden
+    width: 75%
+    flex-direction: row
+    margin-top: 30vh
+    max-width: 65%
     @media screen and (max-width: 736px)
         width: 90%
 
-#big-link
-    font-family: $font
-    font-size: 3rem
-    font-weight: 300
+.big-links
+    flex: 2;
+.big-link
+    font-size: 3.5rem
     margin-bottom: 2rem
     line-height: 1.5em
+    font-weight: 100
+    text-transform: lowercase
+    font-family: $font-body
+    color: red !important
+
+#logo
+    flex: 5
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-top: 10vh
+    h1
+        font-family: $font-header
+        font-weight: 100
+        font-size: 6rem
+        line-height: 4rem
+        font-weight: 700
 
 #title
     margin-top: 3rem
-    font-family: $font
+    font-family: $font-header
     font-size: 2rem
     line-height: 3rem
     margin-bottom: 2rem
@@ -31,7 +51,6 @@
         margin-bottom: 1em
         line-height: 1.8
         letter-spacing: 1.5px
-        opacity: 0.8
     & .highlight
         width: 100%
     & pre

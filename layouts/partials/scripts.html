@@ -1,6 +1,5 @@
 <script src="//cdn.jsdelivr.net/terra/latest/mainfile"></script>
 <script type="text/javascript">
-  console.log(window.terra)
   function plant(config) {
     const { color, size, photosynthesis } = config || {};
     return {
@@ -36,25 +35,6 @@
       sustainability: 3
     };
   };
-  // function init(window, terrarium) {
-  //   console.log('init called! ', window, terrarium);
-  //   const width = window.innerWidth;
-  //   const height = window.innerHeight;
-  //   const cellSize = Math.max(width, height) / 75;
-  //   if (terrarium) {
-  //     terrarium.stop();
-  //   } else {
-  //     terrarium = new terra.Terrarium(
-  //       Math.ceil(width / cellSize), 
-  //       Math.ceil(height / cellSize), 
-  //       { cellSize, id: 'terra-bg' }
-  //     );
-  //   }        
-  //   terrarium.grid = terrarium.makeGridWithDistribution([['plant', 50], ['brute', 5], ['bully', 10]]);
-  //   terrarium.animate();
-  //   return terrarium
-  // }
-
 
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -72,6 +52,11 @@
   ); 
 
   terrarium.grid = terrarium.makeGridWithDistribution([['plant', 50], ['brute', 5], ['bully', 10]]);
-  terrarium.animate();
+  terrarium.draw();
+
+  window.setInterval(function() {
+    terrarium.grid = terrarium.step();
+    terrarium.draw();
+  }, 50);
 
 </script>

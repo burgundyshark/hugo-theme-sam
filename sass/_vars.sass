@@ -7,11 +7,12 @@ $primary-color: $burgundy;
 
 $background: darken($primary-color, 5%)
 
-$font: 'Didact Gothic','sans serif'
+$font-header: 'Prompt','sans serif'
+$font-body: 'Montserrat', 'sans-serif'
 $body-size: 16px
-$body-text: lighten( $primary-color, 50% )
+$body-text: saturate(lighten( $primary-color, 60% ), 10%)
 
-$links: adjust-hue( $body-text, -90 )
+$links: saturate(adjust-hue( $body-text, -95 ), 60%)
 $links-hover: lighten( $links, 10% )
 
 $code-block: #0004
