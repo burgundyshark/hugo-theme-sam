@@ -1,11 +1,17 @@
 $white: #fff
 $black: #111
 $dark-grey: #39424E
+$burgundy: rgb(63, 33, 55);
+
+$primary-color: $burgundy;
+
+$background: darken($primary-color, 5%)
+
 $font: 'Didact Gothic','sans serif'
 $body-size: 16px
-$body-text: $white
+$body-text: lighten( $primary-color, 50% )
 
-$links: darken($white, 20%)
-$links-hover: $white
+$links: adjust-hue( $body-text, -90 )
+$links-hover: lighten( $links, 10% )
 
 $code-block: #0004

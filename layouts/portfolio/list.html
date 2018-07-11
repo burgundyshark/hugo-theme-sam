@@ -1,7 +1,7 @@
 {{ partial "head.html" . }}<body><div class="wrap"><div class="section" id="content">{{ .Content }}</div>
 {{ if .Site.Params.clickablePhotos }}<div class="grid">
-{{ $name := .Site.Params.galleryFolder | default "images/"}}
-{{ $path := "gallery/" }}
+{{ $name := .Site.Params.portfolioFolder | default "images/"}}
+{{ $path := "portfolio/" }}
 {{ $content := "/content/" }}
 {{ $src := (print $path $name) }}
 
@@ -13,8 +13,8 @@
 <div><a href="{{ $src | absURL }}{{.Name }}"><img src="{{ $src | absURL }}{{.Name }}"/></a></div>
 {{ end }}</div>
 {{ else }}<div class="grid">
-{{ $name := .Site.Params.galleryFolder | default "images/"}}
-{{ $path := "gallery/" }}
+{{ $name := .Site.Params.portfolioFolder | default "images/"}}
+{{ $path := "portfolio/" }}
 {{ $content := "/content/" }}
 {{ $src := (print $path $name) }}
 
